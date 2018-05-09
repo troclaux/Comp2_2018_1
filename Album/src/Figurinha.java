@@ -22,4 +22,9 @@ public class Figurinha implements Colecionavel {
     public void setUrlDaImagem(String url) {
         this.urlDaImagem = url;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Figurinha %d", this.numero);
+    }
 }

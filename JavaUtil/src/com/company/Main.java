@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Main {
 
-    private static final int N = 160_000;
+    private static final int N = 640_000;
     private static final int MAX_VALUE = 1_000_000;
     private static final int SOMA_DESEJADA = -1;
 
@@ -32,18 +32,16 @@ public class Main {
      *         null, caso contrario.
      */
     public static Integer encontrarPar(List<Integer> lista, int somaDesejada) {
+        Set<Integer> conjunto = new HashSet<>();
         for (int i = 0; i < lista.size(); i++) {
             int elemento = lista.get(i);
-            
-//            for (int j = i+1; j < lista.size(); j++) {
-//                int outro = lista.get(j);
-//                if (elemento + outro == somaDesejada) {
-//                    return elemento;
-//                }
-//            }
-            int complementar = somaDesejada - elemento;
-            if (lista.contains(complementar)) {
-                return elemento;
+            conjunto.add(elemento);
+        }
+
+        for (int i = 0; i < lista.size(); i++) {
+            int complementar = somaDesejada - lista.get(i);
+            if (conjunto.contains(complementar)) {
+                return complementar;
             }
         }
         return null;

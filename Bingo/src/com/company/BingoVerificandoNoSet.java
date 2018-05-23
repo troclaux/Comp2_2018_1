@@ -22,4 +22,10 @@ public class BingoVerificandoNoSet extends Bingo {
             }
         }
     }
+
+    @Override
+    public void zerar() {
+        super.zerar();
+        this.conjuntoDeBolasSorteadas.clear();
+    }
 }

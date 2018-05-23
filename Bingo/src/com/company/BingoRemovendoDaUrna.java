@@ -10,7 +10,12 @@ public class BingoRemovendoDaUrna extends Bingo {
     public BingoRemovendoDaUrna(int nBolas) {
         super(nBolas);
         this.urna = new ArrayList<>(nBolas);
-        for (int bola = 1; bola <= nBolas; bola++) {
+        prepararUrna();
+    }
+
+    private void prepararUrna() {
+        this.urna.clear();
+        for (int bola = 1; bola <= this.nBolas; bola++) {
             this.urna.add(bola);
         }
     }
@@ -21,5 +26,11 @@ public class BingoRemovendoDaUrna extends Bingo {
         int bola = this.urna.get(indice);
         this.urna.remove(indice);
         return bola;
+    }
+
+    @Override
+    public void zerar() {
+        super.zerar();
+        prepararUrna();
     }
 }

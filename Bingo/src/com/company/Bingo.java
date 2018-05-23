@@ -26,6 +26,10 @@ public abstract class Bingo {
         return this.sorteios;
     }
 
+    /**
+     * Prepara o bingo para começar um novo jogo, i.e.,
+     * restaura a "urna", zerando todos os sorteios já feitos.
+     */
     public void zerar() {
         this.sorteios.clear();
     }

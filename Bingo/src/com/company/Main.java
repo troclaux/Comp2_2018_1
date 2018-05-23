@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Main {
 
-    private static int N = 1000;
+    private static int N = 800_000;
 
     public static void simularJogo(Bingo bingo) {
         long inicio = System.currentTimeMillis();
@@ -19,13 +19,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	    Bingo bingoVerificandoNaLista = new BingoVerificandoNaLista(N);
-        Bingo bingoRemovendoDaUrna = new BingoRemovendoDaUrna(N);
+//	    Bingo bingoVerificandoNaLista = new BingoVerificandoNaLista(N);
+//        Bingo bingoRemovendoDaUrna = new BingoRemovendoDaUrna(N);
         Bingo bingoVerificandoNoSet = new BingoVerificandoNoSet(N);
         Bingo bingoComKnuthShuffle = new BingoComKnuthShuffle(N);
 
-        simularJogo(bingoVerificandoNaLista);
-        simularJogo(bingoRemovendoDaUrna);
+//        simularJogo(bingoVerificandoNaLista);
+//        simularJogo(bingoRemovendoDaUrna);
         simularJogo(bingoVerificandoNoSet);
         simularJogo(bingoComKnuthShuffle);
     }
